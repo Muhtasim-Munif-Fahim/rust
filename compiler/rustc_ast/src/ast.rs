@@ -3509,7 +3509,8 @@ impl AttrItemKind {
 #[derive(Clone, Encodable, Decodable, Debug, StableHash)]
 pub enum EarlyParsedAttribute {
     CfgTrace(CfgEntry),
-    CfgAttrTrace,
+    /// The value is the `cfg` predicate of this `cfg_attr`.
+    CfgAttrTrace(CfgEntry),
 }
 
 impl AttrItem {
